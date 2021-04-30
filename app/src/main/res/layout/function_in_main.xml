@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/count_down_popup_view"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:minWidth="390dp"
+        android:gravity="center"
+        android:layout_height="84dp"
+        android:background="#004E4E4E" >
+
+        <LinearLayout
+            android:id="@+id/function_in_main_count_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/function_pop_background">
+            <ImageView
+                android:id="@+id/count_dismiss"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="4dp"
+                android:gravity="center_vertical"
+                android:src="@drawable/icon_countdown" />
+
+            <TextView
+                android:id="@+id/count_off"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:layout_height="80dp"
+                android:layout_margin="4dp"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:text="@string/main_pop_count_off"/>
+            <TextView
+                android:id="@+id/count_three"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:layout_margin="4dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:text="@string/main_pop_count_three"/>
+            <TextView
+                android:id="@+id/count_seven"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:layout_margin="4dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:text="@string/main_pop_count_seven"/>
+            <TextView
+                android:id="@+id/count_ten"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:layout_margin="4dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"
+                android:text="@string/main_pop_count_ten"/>
+        </LinearLayout>
+
+    </LinearLayout>

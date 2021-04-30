@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants"
+    android:background="#004E4E4E">
+
+
+    <RadioGroup
+        android:id="@+id/module_select_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="175dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:id="@+id/module_select_video"
+            android:gravity="center"
+            android:clickable="true"
+            android:button="@null"
+            android:text="@string/module_vedio"
+            android:paddingLeft="@dimen/doc_type_bar_text_padding"
+            android:paddingRight="@dimen/doc_type_bar_text_padding"
+            android:textSize="@dimen/doc_type_bar_text_size"
+            android:textColor="@color/mode_text_selector"
+            android:background="@drawable/module_select"
+            android:shadowRadius="@dimen/mode_menu_bar_text_shadow_radius"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:id="@+id/module_select_capture"
+            android:clickable="true"
+            android:gravity="center"
+            android:button="@null"
+            android:text="@string/module_capture"
+            android:paddingLeft="@dimen/doc_type_bar_text_padding"
+            android:paddingRight="@dimen/doc_type_bar_text_padding"
+            android:textSize="@dimen/doc_type_bar_text_size"
+            android:textColor="@color/mode_text_selector"
+            android:background="@drawable/module_select"
+            android:shadowRadius="@dimen/mode_menu_bar_text_shadow_radius"/>
+    </RadioGroup>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pager"/>
+</FrameLayout>

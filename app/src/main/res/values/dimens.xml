@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="close_button_padding">8dp</dimen>
+    <dimen name="flash_button_margin">5.5dp</dimen>
+    <dimen name="filter_button_margin">8dp</dimen>
+    <dimen name="one_ui_bottom_large">75dp</dimen>
+    <dimen name="one_ui_bottom_small">67dp</dimen>
+    <dimen name="capture_size">48dp</dimen>
+    <dimen name="doc_type_bar_text_padding">15dp</dimen>
+    <dimen name="doc_type_bar_text_size">20sp</dimen>
+    <dimen name="mode_menu_bar_text_shadow_radius">10</dimen>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:shape="rectangle">
+
+
+    <solid android:color="#4C000000"></solid>
+
+
+
+
+    <!-- Liverpool code, lens change UI for AX3522-529 by wuguoqing at 20-12-15 start -->
+    <stroke android:width="0dp" android:color="#4C000000"></stroke>
+    <!-- Liverpool code, lens change UI for AX3522-529 by wuguoqing at 20-12-15 end -->
+
+
+
+
+    <corners android:radius="84dp" />
+
+
+
+</shape>

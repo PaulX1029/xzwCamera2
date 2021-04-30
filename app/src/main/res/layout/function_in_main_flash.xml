@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flash_popup_view"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:minWidth="400dp"
+        android:layout_height="84dp"
+        android:gravity="center"
+        android:background="#004E4E4E" >
+
+        <LinearLayout
+            android:id="@+id/function_in_main_flash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/function_pop_background">
+            <!-- Liverpool code for AX3522-1023 by wuguoqing at 2021/01/20 start -->
+            <ImageView
+                android:id="@+id/flash_dismiss"
+                android:importantForAccessibility="no"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:src="@drawable/icon_flash_on"
+                />
+            <!-- Liverpool code for AX3522-1023 by wuguoqing at 2021/01/20 end -->
+
+            <!-- Liverpool code for AX3522-527 by wuguoqing at 2020/12/17 start -->
+            <TextView
+                android:id="@+id/flash_off"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:layout_height="84dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="#FFFFFF"
+                android:text="@string/main_pop_flash_off"/>
+            <TextView
+                android:id="@+id/flash_auto"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_height="84dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="#FFFFFF"
+                android:text="@string/main_pop_flash_auto"/>
+            <TextView
+                android:id="@+id/flash_on"
+                android:layout_width="wrap_content"
+                android:minWidth="70dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_height="84dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="#FFFFFF"
+                android:text="@string/main_pop_flash_on"/>
+            <TextView
+                android:id="@+id/flash_keep"
+                android:layout_width="wrap_content"
+                android:minWidth="105dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_height="84dp"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:textColor="#FFFFFF"
+                android:ellipsize="none"
+                android:maxLines="100"
+                android:scrollHorizontally="false"
+                android:text="@string/main_pop_flash_keep"/>
+            <!-- Liverpool code for AX3522-527 by wuguoqing at 2020/12/17 end -->
+        </LinearLayout>
+    </LinearLayout>
+
