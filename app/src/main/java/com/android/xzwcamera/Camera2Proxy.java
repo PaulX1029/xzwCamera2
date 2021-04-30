@@ -775,7 +775,7 @@ public class Camera2Proxy {
 
     public void stopBackgroundThread() {
         Log.v(TAG, "stopBackgroundThread");
-        mBackgroundThread.quit();
+        mBackgroundThread.quitSafely();
         try {
             mBackgroundThread.join();
             mBackgroundThread = null;
