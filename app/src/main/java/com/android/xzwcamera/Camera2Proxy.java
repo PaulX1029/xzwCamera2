@@ -218,7 +218,9 @@ public class Camera2Proxy {
             mImageReader = null;
         }
         mOrientationEventListener.disable();
-        stopBackgroundThread(); // 对应 openCamera() 方法中的 startBackgroundThread()
+        if(mBackgroundThread != null) {
+            stopBackgroundThread(); // 对应 openCamera() 方法中的 startBackgroundThread()
+        }
     }
 
 
@@ -399,7 +401,7 @@ public class Camera2Proxy {
     }
 
     public void stopRecording(){
-        scanFile(mNextVideoAbsolutePath);
+//        scanFile(mNextVideoAbsolutePath);
         File file = new File(mNextVideoAbsolutePath);
         ImageUtils.refreshAlbum(file);
         getVideoPath();

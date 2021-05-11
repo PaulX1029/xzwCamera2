@@ -17,7 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -32,5 +34,6 @@ dependencies {
     implementation fileTree(include: ['*.aar', '*.jar'], exclude: [], dir: '/home/ubuntu/share/recyclerview-1.1.0/jars')
     implementation fileTree(include: ['*.aar', '*.jar'], exclude: [], dir: '/home/ubuntu/share/cardview-1.0.0/jars')
     compileOnly fileTree(include: ['*.aar', '*.jar'], exclude: [], dir: '/home/ubuntu/share/core-1.3.1/jars')
+    implementation 'com.huawei.hms:scan:1.1.1.301'
     implementation files('libs/arcsoft_face.jar')
 }

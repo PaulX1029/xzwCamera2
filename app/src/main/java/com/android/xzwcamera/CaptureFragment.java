@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +34,9 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.android.xzwcamera.UI.Camera2TextureView;
 import com.android.xzwcamera.UI.FunctionPopup;
+import com.huawei.hms.hmsscankit.ScanUtil;
+import com.huawei.hms.ml.scan.HmsScan;
+import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 
 import java.nio.ByteBuffer;
 
@@ -148,6 +153,10 @@ public class CaptureFragment extends Fragment implements View.OnClickListener{
     private SeekBar mSeekBar;
     private TextView mFilterNameTv;
 
+    /*Scan Qrcode*/
+    private ImageView mQucikSettings;
+    private static int REQUEST_CODE_SCAN = 1;
+
     /*从拍照模式切换过来时刷新相册显示*/
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -163,14 +172,11 @@ public class CaptureFragment extends Fragment implements View.OnClickListener{
             return;
         }
         if (isVisibleToUser) {
-            if (!mCameraView.isAvailable()) {
-                mCameraView.setSurfaceTextureListener(mSurfaceTextureListener);
-            } else {
-                reopenCamera();
-            }
+            reopenCamera();
             Bitmap bitmap = ImageUtils.getLatestThumbBitmap();
             mPreviewPicture.setImageDrawable(ImageUtils.updateThumbnail(bitmap , mActivity));
         }else{
+            Log.d(TAG, TAG + " releaseCamera");
             mCameraProxy.releaseCamera();
         }
     }
@@ -240,6 +246,35 @@ public class CaptureFragment extends Fragment implements View.OnClickListener{
 
         /*use filters*/
         mGPUImageView = (GPUImageView) view.findViewById(R.id.gpuimage);
+
+        /*ScanQrcode*/
+        mQucikSettings = (ImageView)view.findViewById(R.id.quick_settings);
+        mQucikSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCameraProxy.releaseCamera();
+                //REQUEST_CODE_SCAN  常量，自己定义一个值，用于回调使用
+                ScanUtil.startScan(getActivity(), REQUEST_CODE_SCAN, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScan.QRCODE_SCAN_TYPE).create());
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //receive result after your activity finished scanning
+        super.onActivityResult(requestCode, resultCode, data);
+        // Obtain the return value of HmsScan from the value returned by the onActivityResult method by using ScanUtil.RESULT as the key value.
+        if (requestCode == REQUEST_CODE_SCAN) {
+            Object obj = data.getParcelableExtra(ScanUtil.RESULT);
+            if (obj instanceof HmsScan) {
+                if (!TextUtils.isEmpty(((HmsScan) obj).getOriginalValue())) {
+                    String scanData = ((HmsScan) obj).getOriginalValue();
+                    Log.d("xzw123456",scanData);
+                    Toast.makeText(getActivity(), scanData, Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+        }
     }
 
     private Runnable mTimerUpdateTask = new Runnable() {
@@ -639,6 +674,7 @@ public class CaptureFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onResume() {
+        Log.d(TAG,"onResume");
         super.onResume();
         mCameraProxy.startBackgroundThread();
         if (!mCameraView.isAvailable()) {
@@ -651,17 +687,20 @@ public class CaptureFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onPause() {
 //        mCameraProxy.releaseCamera();
+        Log.d(TAG,"onPause");
         super.onPause();
     }
 
     @Override
     public void onStop() {
-        mCameraProxy.releaseCamera();
+//        mCameraProxy.releaseCamera();
+        Log.d(TAG,"onStop");
         super.onStop();
     }
 
     @Override
     public void onDestroy() {
+        Log.d(TAG,"onDestroy");
         super.onDestroy();
 //        mCameraProxy.releaseCamera();
     }

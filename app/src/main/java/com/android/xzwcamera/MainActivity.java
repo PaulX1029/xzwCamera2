@@ -37,6 +37,8 @@ import Utils.ImageUtils;
 
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener {
 
+    private static String TAG = "MainActivity";
+
     private ViewPager mPager;
     private FragmentManager mFragmentManager;
 //    private AutoFitTextureView autoFitTextureView;
@@ -46,6 +48,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     private RadioGroup mModuleSelectMain;
     private RadioButton mModuleSelectCapture;
     private RadioButton mModuleSelectVideo;
+
+    private FragmentAdapter mFragmentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         List<Fragment> mFragments = new ArrayList<>();
         mFragments.add(new VideoFragment());
         mFragments.add(new CaptureFragment());
-        FragmentAdapter mFragmentAdapter = new FragmentAdapter(mFragmentManager);
+        mFragmentAdapter = new FragmentAdapter(mFragmentManager);
         mFragmentAdapter.setFragments(mFragments);
         mPager.setAdapter(mFragmentAdapter);
         mPager.setCurrentItem(1);
@@ -157,6 +161,35 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         if (resultCode == RESULT_OK && requestCode == 200) {
             checkPermission();
         }
+    }
+
+    @Override
+    public void onResume() {
+        Log.d(TAG,"onResume");
+        mPager.setAdapter(mFragmentAdapter);
+        mPager.setCurrentItem(1);
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mCameraProxy.releaseCamera();
+        Log.d(TAG,"onPause");
+    }
+
+    @Override
+    public void onStop() {
+//        mCameraProxy.releaseCamera();
+        Log.d(TAG,"onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(TAG,"onDestroy");
+        super.onDestroy();
+//        mCameraProxy.releaseCamera();
     }
 
 }

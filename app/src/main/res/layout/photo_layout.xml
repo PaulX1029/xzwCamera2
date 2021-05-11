@@ -18,17 +18,15 @@
 
     <ImageView
         android:id="@+id/close_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
-        android:padding="@dimen/close_button_padding"
         android:focusable="true"
         android:src="@drawable/btn_close" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="15dp">
@@ -67,6 +65,16 @@
                 style="@style/OneUIMenuButton"
                 android:contentDescription="@string/accessibility_count_down"
                 android:src="@drawable/icon_countdown"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="30dp"
+                android:id="@+id/quick_settings"
+                style="@style/OneUIMenuButton"
+                android:contentDescription="@string/accessibility_count_down"
+                android:src="@drawable/ic_quick_settings"/>
 
         </LinearLayout>
     </RelativeLayout>
