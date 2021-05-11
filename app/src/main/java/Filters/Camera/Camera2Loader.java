@@ -144,6 +144,7 @@ public class Camera2Loader extends CameraLoader {
             mImageReader.close();
             mImageReader = null;
         }
+
     }
 
     private String getCameraId(int facing) throws CameraAccessException {

@@ -81,7 +81,7 @@ public class GalleryActivity extends BaseActivity implements View.OnClickListene
 
     private void saveImage() {
         String fileName = System.currentTimeMillis() + ".jpg";
-        mGPUImageView.saveToPictures("GPUImage", fileName, mOnPictureSavedListener);
+        mGPUImageView.saveToPictures("相机", fileName, mOnPictureSavedListener);
     }
 
     @Override
@@ -154,7 +154,8 @@ public class GalleryActivity extends BaseActivity implements View.OnClickListene
         public void onPictureSaved(Uri uri) {
             String filePath = FileUtils.getRealFilePath(GalleryActivity.this, uri);
             Log.d(TAG, "save to " + filePath);
-            Toast.makeText(GalleryActivity.this, "Saved: " + filePath, Toast.LENGTH_SHORT).show();
+            String savePicture = getString(R.string.save_picture);
+            Toast.makeText(GalleryActivity.this, savePicture, Toast.LENGTH_SHORT).show();
         }
     };
 }

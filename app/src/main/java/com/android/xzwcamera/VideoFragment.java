@@ -38,6 +38,7 @@ import com.huawei.hms.hmsscankit.ScanUtil;
 import com.huawei.hms.ml.scan.HmsScan;
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 
+import Filters.Activity.MainActivity1;
 import Utils.CircularDrawable;
 import Utils.ImageUtils;
 
@@ -207,7 +208,8 @@ public class VideoFragment extends Fragment implements View.OnClickListener {
         mFilterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFilterPop();
+                Intent intent = new Intent(mContext, MainActivity1.class);
+                startActivity(intent);
             }
         });
 
@@ -607,12 +609,14 @@ public class VideoFragment extends Fragment implements View.OnClickListener {
         mFilterButton.setVisibility(View.INVISIBLE);
         mCountButton.setVisibility(View.INVISIBLE);
         mCloseButton.setVisibility(View.INVISIBLE);
+        mQucikSettings.setVisibility(View.INVISIBLE);
     }
 
     public void hideTopUIForCountDown(){
         mFilterButton.setVisibility(View.INVISIBLE);
         mFlashButton.setVisibility(View.INVISIBLE);
         mCloseButton.setVisibility(View.INVISIBLE);
+        mQucikSettings.setVisibility(View.INVISIBLE);
     }
 
     public void hideTopUIForFIlter(){
@@ -629,12 +633,14 @@ public class VideoFragment extends Fragment implements View.OnClickListener {
         mFilterButton.setVisibility(View.VISIBLE);
         mCountButton.setVisibility(View.VISIBLE);
         mCloseButton.setVisibility(View.VISIBLE);
+        mQucikSettings.setVisibility(View.VISIBLE);
     }
 
     public void showUIForCountDown(){
         mFilterButton.setVisibility(View.VISIBLE);
         mFlashButton.setVisibility(View.VISIBLE);
         mCloseButton.setVisibility(View.VISIBLE);
+        mQucikSettings.setVisibility(View.VISIBLE);
     }
 
     public void showCountDownPop(){

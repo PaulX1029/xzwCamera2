@@ -21,7 +21,8 @@
     <string name="main_permission_hint">Please Open Permission</string>
 
     <!-- Common-->
-    <string name="choose_filter">Choose Filter</string>
+    <string name="choose_filter">选择一个滤镜</string>
+    <string name="save_picture">图片已保存至相册</string>
 
     <!-- Filter-->
     <string name="contrast">Contrast</string>

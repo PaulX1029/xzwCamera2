@@ -8,23 +8,18 @@
     android:orientation="vertical"
     tools:context="Filters.Activity.MainActivity1">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
-        android:background="@color/colorPrimary"
-        app:title="@string/app_name"
-        app:titleTextColor="@android:color/white"/>
-
     <Button
         android:id="@+id/main_camera_btn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:layout_weight="1"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
         android:drawableTop="@mipmap/ic_camera"
         android:padding="30dp"
         android:text="@string/main_camera"
-        android:textSize="18sp"/>
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/main_gallery_btn"
@@ -34,9 +29,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="1"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
         android:drawableTop="@mipmap/ic_gallery"
         android:padding="30dp"
         android:text="@string/main_gallery"
-        android:textSize="18sp"/>
+        android:textSize="25sp"/>
 
 </LinearLayout>

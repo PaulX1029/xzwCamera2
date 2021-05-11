@@ -30,6 +30,7 @@
             android:label="@string/app_lable"
             android:screenOrientation="portrait"
             android:visibleToInstantApps="true"
+            android:launchMode="singleInstance"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,16 +40,20 @@
 
         <activity
             android:name="Filters.Activity.GalleryActivity"
+            android:launchMode="singleInstance"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
         <activity
             android:name="Filters.Activity.MainActivity1"
+            android:launchMode="singleInstance"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name="Filters.Activity.CameraActivity"
-            android:theme="@style/AppTheme"
+            android:theme="@style/Theme.Camera"
+            android:visibleToInstantApps="true"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             android:screenOrientation="portrait"/>
 
         <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity"

@@ -67,7 +67,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 mGPUImageView.updatePreviewFrame(data, width, height);
             }
         });
-        mGPUImageView.setRatio(0.75f); // 固定使用 4:3 的尺寸
+        mGPUImageView.setRatio(0.61f); // 固定使用 4:3 的尺寸
         updateGPUImageRotate();
         mGPUImageView.setRenderMode(GPUImageView.RENDERMODE_CONTINUOUSLY);
     }
@@ -194,7 +194,8 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
         public void onPictureSaved(Uri uri) {
             String filePath = FileUtils.getRealFilePath(CameraActivity.this, uri);
             Log.d(TAG, "save to " + filePath);
-            Toast.makeText(CameraActivity.this, "Saved: " + filePath, Toast.LENGTH_SHORT).show();
+            String savePicture = getString(R.string.save_picture);
+            Toast.makeText(CameraActivity.this,savePicture , Toast.LENGTH_SHORT).show();
         }
     };
 

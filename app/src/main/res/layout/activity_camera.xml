@@ -12,25 +12,33 @@
 
         <ImageView
             android:id="@+id/close_iv"
-            android:layout_width="40dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
             android:padding="8dp"
             android:src="@drawable/btn_close"/>
 
-        <ImageView
-            android:id="@+id/switch_camera_iv"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:padding="8dp"
-            android:src="@drawable/btn_front_back_switcher"/>
+        <TextView
+            android:id="@+id/filter_name_tv"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:foregroundGravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_filter"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"/>
 
         <ImageView
             android:id="@+id/compare_iv"
-            android:layout_width="40dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_height="40dp"
-            android:layout_marginRight="10dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
             android:padding="8dp"
             android:src="@mipmap/ic_compare"/>
     </LinearLayout>
@@ -51,6 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:background="#55ffffff"
             android:max="100"
             android:padding="10dp"
@@ -60,28 +70,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/filter_name_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/choose_filter"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"/>
+        <ImageView
+            android:id="@+id/switch_camera_iv"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/save_iv"
+            android:background="@drawable/bg_image_white_boarder"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_front_back_switcher"/>
 
         <ImageView
             android:id="@+id/save_iv"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentEnd="true"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerInParent="true"
             android:layout_centerVertical="true"
-            android:padding="5dp"
-            android:src="@mipmap/ic_ok"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_new_shutter"/>
     </RelativeLayout>
 
 </LinearLayout>
